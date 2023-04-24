@@ -8,6 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
@@ -21,6 +22,10 @@ public class UserDetailsImpl implements UserDetails {
     private String username;
     @JsonIgnore
     private String password;
+    private String name;
+    private LocalDateTime lastLoginDate;
+    private String lastLoginDateDisplay;
+    private LocalDateTime joinDate;
     private Collection<? extends GrantedAuthority> authorities;
     private boolean isActive;
     private boolean isNotLocked;
@@ -34,6 +39,10 @@ public class UserDetailsImpl implements UserDetails {
                 userModel.getId(),
                 userModel.getUsername(),
                 userModel.getPassword(),
+                userModel.getName(),
+                userModel.getLastLoginDate(),
+                userModel.getLastLoginDateDisplay(),
+                userModel.getJoinDate(),
                 authorities,
                 userModel.isActive(),
                 userModel.isNotLocked());

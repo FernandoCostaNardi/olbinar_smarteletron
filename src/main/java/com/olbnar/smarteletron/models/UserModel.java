@@ -28,6 +28,8 @@ public class UserModel {
 
     private String password;
 
+    private String name;
+
     @Column(name = "profileimageurl")
     private String profileImageUrl;
 
