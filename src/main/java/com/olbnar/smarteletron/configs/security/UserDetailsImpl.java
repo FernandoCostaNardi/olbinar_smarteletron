@@ -82,4 +82,32 @@ public class UserDetailsImpl implements UserDetails {
     public boolean isEnabled() {
         return isActive();
     }
+
+    public UUID getUserId() {
+        return userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public LocalDateTime getLastLoginDate() {
+        return lastLoginDate;
+    }
+
+    public String getLastLoginDateDisplay() {
+        return lastLoginDateDisplay;
+    }
+
+    public LocalDateTime getJoinDate() {
+        return joinDate;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public boolean isNotLocked() {
+        return isNotLocked;
+    }
 }
