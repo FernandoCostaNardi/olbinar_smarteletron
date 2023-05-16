@@ -1,6 +1,7 @@
 package com.olbnar.smarteletron.repositories;
 
 import com.olbnar.smarteletron.models.UserModel;
+import org.hibernate.boot.model.source.spi.AttributePath;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -12,5 +13,7 @@ public interface UserModelRepository extends JpaRepository<UserModel, UUID> {
     @EntityGraph(attributePaths = "roles", type = EntityGraph.EntityGraphType.FETCH)
     Optional<UserModel> findByUsername(String username);
 
+    @EntityGraph(attributePaths = "roles", type = EntityGraph.EntityGraphType.FETCH)
+   Optional<UserModel> findById(UUID userId);
 
 }
