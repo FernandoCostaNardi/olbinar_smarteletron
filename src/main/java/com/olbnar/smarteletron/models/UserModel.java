@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -48,7 +47,8 @@ public class UserModel {
     @JoinTable(name = "users_roles",
     joinColumns = @JoinColumn(name = "user_id"),
     inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<RoleModel> roles = new HashSet<>();
+    @Builder.Default
+    private  Set<RoleModel> roles = new HashSet<>();
 
     private String authorities;
 

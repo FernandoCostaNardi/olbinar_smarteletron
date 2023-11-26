@@ -2,7 +2,6 @@ package com.olbnar.smarteletron.configs.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.olbnar.smarteletron.dtos.ErrorDto;
-import lombok.Data;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.AuthenticationException;

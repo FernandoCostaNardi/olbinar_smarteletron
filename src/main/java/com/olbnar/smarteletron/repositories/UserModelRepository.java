@@ -1,7 +1,6 @@
 package com.olbnar.smarteletron.repositories;
 
 import com.olbnar.smarteletron.models.UserModel;
-import org.hibernate.boot.model.source.spi.AttributePath;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 
