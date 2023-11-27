@@ -2,8 +2,8 @@ package com.olbnar.smarteletron.services.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.olbnar.smarteletron.configs.security.JwtProvider;
-import com.olbnar.smarteletron.dtos.JwtDto;
-import com.olbnar.smarteletron.dtos.LoginDto;
+import com.olbnar.smarteletron.records.JwtRecord;
+import com.olbnar.smarteletron.records.LoginRecord;
 import com.olbnar.smarteletron.repositories.UserModelRepository;
 import com.olbnar.smarteletron.services.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,11 +27,11 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     UserModelRepository userModelRepository;
 
     @Override
-    public ResponseEntity<JwtDto> authenticateUser(LoginDto loginDto) throws JsonProcessingException {
+    public ResponseEntity<JwtRecord> authenticateUser(LoginRecord loginDto) throws JsonProcessingException {
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(loginDto.getUsername(), loginDto.getPassword()));
+                new UsernamePasswordAuthenticationToken(loginDto.username(), loginDto.password()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtProvider.generateJwt(authentication);
-        return ResponseEntity.ok(new JwtDto(jwt));
+        return ResponseEntity.ok(new JwtRecord(jwt));
     }
 }

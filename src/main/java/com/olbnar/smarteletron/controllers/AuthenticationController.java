@@ -1,8 +1,8 @@
 package com.olbnar.smarteletron.controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.olbnar.smarteletron.dtos.JwtDto;
-import com.olbnar.smarteletron.dtos.LoginDto;
+import com.olbnar.smarteletron.records.JwtRecord;
+import com.olbnar.smarteletron.records.LoginRecord;
 import com.olbnar.smarteletron.services.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +24,7 @@ public class AuthenticationController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<JwtDto> authenticateUser(@Valid @RequestBody LoginDto loginDto) throws JsonProcessingException {
+    public ResponseEntity<JwtRecord> authenticateUser(@Valid @RequestBody LoginRecord loginDto) throws JsonProcessingException {
         return authenticationService.authenticateUser(loginDto);
     }
 
