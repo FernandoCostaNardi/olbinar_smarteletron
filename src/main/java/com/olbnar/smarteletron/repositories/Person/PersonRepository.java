@@ -16,6 +16,8 @@ public interface PersonRepository extends JpaRepository<PersonModel, UUID> {
     
     @Query(value = "SELECT name, username, profileimageurl, isactive, isnotlocked FROM users", nativeQuery = true)
     Page<PersonRecord> findPersonRecord(Pageable pageable);
+
+    boolean existsByUsername(String username);
     
 
 }

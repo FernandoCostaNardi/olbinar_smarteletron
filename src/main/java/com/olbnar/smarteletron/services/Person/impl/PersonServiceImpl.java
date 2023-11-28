@@ -38,7 +38,7 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public PersonModel savePerson(PersonModel personModel) {
-        if(personRepository.existsById(personModel.getId())){
+        if(personRepository.existsByUsername(personModel.getUsername())){
             throw new RuntimeException("Pessoa já existe");
         }
         personModel.setPassword(passwordEncoder.encode(personModel.getPassword()));
