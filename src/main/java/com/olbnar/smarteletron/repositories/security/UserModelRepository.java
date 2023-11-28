@@ -1,8 +1,9 @@
-package com.olbnar.smarteletron.repositories;
+package com.olbnar.smarteletron.repositories.security;
 
-import com.olbnar.smarteletron.models.UserModel;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.olbnar.smarteletron.models.security.UserModel;
 
 import java.util.Optional;
 import java.util.UUID;

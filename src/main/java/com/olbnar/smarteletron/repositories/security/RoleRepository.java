@@ -1,7 +1,8 @@
-package com.olbnar.smarteletron.repositories;
+package com.olbnar.smarteletron.repositories.security;
 
 import com.olbnar.smarteletron.enums.RoleType;
-import com.olbnar.smarteletron.models.RoleModel;
+import com.olbnar.smarteletron.models.security.RoleModel;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

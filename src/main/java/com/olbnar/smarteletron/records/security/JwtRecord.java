@@ -1,4 +1,4 @@
-package com.olbnar.smarteletron.records;
+package com.olbnar.smarteletron.records.security;
 
 import javax.validation.constraints.NotNull;
 

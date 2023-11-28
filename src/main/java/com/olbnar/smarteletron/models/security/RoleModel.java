@@ -1,4 +1,4 @@
-package com.olbnar.smarteletron.models;
+package com.olbnar.smarteletron.models.security;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.olbnar.smarteletron.enums.RoleType;

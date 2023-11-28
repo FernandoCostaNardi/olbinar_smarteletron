@@ -1,7 +1,8 @@
 package com.olbnar.smarteletron.configs.security;
 
-import com.olbnar.smarteletron.models.UserModel;
-import com.olbnar.smarteletron.repositories.UserModelRepository;
+import com.olbnar.smarteletron.models.security.UserModel;
+import com.olbnar.smarteletron.repositories.security.UserModelRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -1,7 +1,8 @@
 package com.olbnar.smarteletron.configs.security;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.olbnar.smarteletron.models.UserModel;
+import com.olbnar.smarteletron.models.security.UserModel;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;

@@ -1,7 +1,7 @@
 package com.olbnar.smarteletron.configs.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.olbnar.smarteletron.records.ErrorRecord;
+import com.olbnar.smarteletron.records.error.ErrorRecord;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.MediaType;

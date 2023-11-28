@@ -1,8 +1,8 @@
-package com.olbnar.smarteletron.controllers;
+package com.olbnar.smarteletron.controllers.security;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.olbnar.smarteletron.records.JwtRecord;
-import com.olbnar.smarteletron.records.LoginRecord;
+import com.olbnar.smarteletron.records.security.JwtRecord;
+import com.olbnar.smarteletron.records.security.LoginRecord;
 import com.olbnar.smarteletron.services.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

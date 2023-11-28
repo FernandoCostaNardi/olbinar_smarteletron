@@ -1,6 +1,7 @@
-package com.olbnar.smarteletron.models;
+package com.olbnar.smarteletron.models.security;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

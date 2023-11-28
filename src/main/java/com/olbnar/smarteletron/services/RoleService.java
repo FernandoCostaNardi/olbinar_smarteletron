@@ -1,7 +1,7 @@
 package com.olbnar.smarteletron.services;
 
 import com.olbnar.smarteletron.enums.RoleType;
-import com.olbnar.smarteletron.models.RoleModel;
+import com.olbnar.smarteletron.models.security.RoleModel;
 
 import java.util.Optional;
 
