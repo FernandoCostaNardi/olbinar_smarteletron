@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.Collections;
@@ -36,6 +35,10 @@ public class PersonServiceImplTest {
     @Mock
     private PasswordEncoder passwordEncoder;
 
+     /**
+     * Test the getAllPersons method.
+     * This test checks if the method returns the correct page of PersonRecord.
+     */
     @Test
     public void testGetAllPersons() {
         // Arrange
@@ -52,6 +55,10 @@ public class PersonServiceImplTest {
         assertEquals(expectedPage, actualPage);
     }
 
+    /**
+     * Test the getPersonModelById method.
+     * This test checks if the method returns the correct PersonModel when the person is found.
+     */
     @Test
     public void testGetPersonModelById_PersonFound() {
         // Arrange
@@ -66,6 +73,10 @@ public class PersonServiceImplTest {
         assertEquals(expectedPerson, actualPerson);
     }
 
+    /**
+     * Test the getPersonModelById method.
+     * This test checks if the method returns the correct PersonModel when the person is found.
+     */
     @Test
     public void testGetPersonModelById_PersonNotFound() {
         // Arrange
@@ -76,12 +87,20 @@ public class PersonServiceImplTest {
         assertThrows(NoSuchElementException.class, () -> personService.getPersonModelById(id));
     }
 
+    /**
+     * Test the getPersonModelById method when the ID is null.
+     * This test checks if the method throws a NullPointerException when null is passed as the ID.
+     */
     @Test
     public void testGetPersonModelById_IdIsNull() {
         // Act & Assert
         assertThrows(NullPointerException.class, () -> personService.getPersonModelById(null));
     }
 
+    /**
+     * Test the savePerson method when the person already exists.
+     * This test checks if the method throws a RuntimeException when trying to save a person that already exists.
+     */
     @Test
     public void testSavePerson_PersonExists() {
         // Arrange
@@ -93,6 +112,12 @@ public class PersonServiceImplTest {
         assertThrows(RuntimeException.class, () -> personService.savePerson(personModel));
     }
 
+    /**
+     * Test the savePerson method when the person does not exist.
+     * This test checks if the method correctly saves a new person when the person does not already exist.
+     * It verifies that the username of the saved person is the same as the username of the original person,
+     * and that the password of the saved person is correctly encoded.
+     */
     @Test
     public void testSavePerson_PersonDoesNotExist() {
         // Arrange
@@ -111,6 +136,10 @@ public class PersonServiceImplTest {
         assertEquals("encodedPassword", savedPerson.getPassword());
     }
 
+    /**
+     * Test the savePerson method when the PersonModel is null.
+     * This test checks if the method throws a NullPointerException when null is passed as the PersonModel.
+     */
     @Test
     public void testSavePerson_PersonModelIsNull() {
         // Act & Assert
