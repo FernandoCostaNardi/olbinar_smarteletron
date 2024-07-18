@@ -1,8 +1,7 @@
 package com.olbnar.smarteletron.configs.security;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.olbnar.smarteletron.models.security.UserModel;
-
+import com.olbnar.smarteletron.models.authentication.UserModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
@@ -12,14 +11,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Data
 @AllArgsConstructor
 public class UserDetailsImpl implements UserDetails {
 
-    private UUID userId;
+    private Long userId;
     private String username;
     @JsonIgnore
     private String password;
@@ -51,7 +49,7 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return this.authorities;
+        return List.of(() -> "read");
     }
 
     @Override
@@ -84,7 +82,7 @@ public class UserDetailsImpl implements UserDetails {
         return isActive();
     }
 
-    public UUID getUserId() {
+    public Long getUserId() {
         return userId;
     }
 

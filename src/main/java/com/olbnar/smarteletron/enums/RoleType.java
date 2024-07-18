@@ -5,5 +5,5 @@ public enum RoleType {
     ROLE_MANAGER,
     ROLE_STORE,
     ROLE_SALLER,
-    ROLE_WARHOUSE
+    ROLE_WAREHOUSE
 }

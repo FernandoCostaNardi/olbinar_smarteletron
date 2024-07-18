@@ -1,16 +1,13 @@
 package com.olbnar.smarteletron.configs.security;
 
-import com.olbnar.smarteletron.models.security.UserModel;
-import com.olbnar.smarteletron.repositories.security.UserModelRepository;
-
+import com.olbnar.smarteletron.models.authentication.UserModel;
+import com.olbnar.smarteletron.repositories.authentication.UserModelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import java.util.UUID;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
@@ -25,7 +22,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         return UserDetailsImpl.build(userModel);
     }
 
-    public UserDetails loadUserById(UUID userId) throws AuthenticationCredentialsNotFoundException {
+    public UserDetails loadUserById(Long userId) throws AuthenticationCredentialsNotFoundException {
         UserModel userModel = userModelRepository.findById(userId)
                 .orElseThrow(() -> new AuthenticationCredentialsNotFoundException("User not found with userId: " + userId));
         return UserDetailsImpl.build(userModel);

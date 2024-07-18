@@ -1,0 +1,20 @@
+GET http://localhost:8080/auth/signIn
+Accept: application/json
+
+###
+
+GET http://localhost:8080/test/signIn
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwicm9sZXMiOiJyZWFkIiwiaWF0IjoxNzIxMzA0MDE3LCJleHAiOjE3MjEzMTg0MTd9.IQBv6f05aiyUcimr7jwTh4Km9Ed3BDF4IEr5JT4OGjAZ2uKySzHXHztHcfQN9O-hlz8LLX1HqsflG9zyY3KlnA
+
+###
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "username": "primeiroteste@sysconard.com.br",
+  "password": "12345"
+}
+
+###
+

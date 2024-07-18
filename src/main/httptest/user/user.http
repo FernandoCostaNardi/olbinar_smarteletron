@@ -1,0 +1,12 @@
+POST http://localhost:8080/user/save
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwicm9sZXMiOiJyZWFkIiwiaWF0IjoxNzIxMzI5MTc0LCJleHAiOjE3MjEzNDM1NzR9.BRkC5uX4lxmDRVFjHfsIQmSRV0k99SPRN-yi8HzKWXw18MsUrRH3giPVeb-mAO3hE_t3Dfoh-dx72p31sjOWCg
+
+{
+  "id": 38,
+  "username": "primeiroteste@sysconard.com.br",
+  "password": "12345",
+  "name": "Primeiro Teste"
+}
+
+###
