@@ -1,5 +1,6 @@
 package com.olbnar.smarteletron.mapper.user;
 
+import com.olbnar.smarteletron.dtos.user.UserListResponse;
 import com.olbnar.smarteletron.dtos.user.UserRequest;
 import com.olbnar.smarteletron.dtos.user.UserResponse;
 import com.olbnar.smarteletron.models.authentication.UserModel;
@@ -9,6 +10,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class UserMapper {
@@ -66,5 +69,32 @@ public class UserMapper {
         userResponse.setActive(userModel.isActive());
         userResponse.setNotLocked(userModel.isNotLocked());
         return userResponse;
+    }
+
+    public List<UserListResponse> modelListToResponseList(List<UserModel> userModelList) {
+        return userModelList.stream().map(userModel -> {
+            UserListResponse userListResponse = new UserListResponse();
+            userListResponse.setId(userModel.getId());
+            userListResponse.setUsername(userModel.getUsername());
+            userListResponse.setName(userModel.getName());
+            userListResponse.setProfileImageUrl(userModel.getProfileImageUrl());
+            userListResponse.setJoinDate(userModel.getJoinDate());
+            userListResponse.setActive(userModel.isActive());
+            userListResponse.setNotLocked(userModel.isNotLocked());
+            // Adicione aqui mais campos conforme necessário
+            return userListResponse;
+        }).collect(Collectors.toList());
+    }
+
+    public UserListResponse modelToListResponse(UserModel userModel) {
+        var userListResponse = new UserListResponse();
+        userListResponse.setId(userModel.getId());
+        userListResponse.setUsername(userModel.getUsername());
+        userListResponse.setName(userModel.getName());
+        userListResponse.setProfileImageUrl(userModel.getProfileImageUrl());
+        userListResponse.setJoinDate(userModel.getJoinDate());
+        userListResponse.setActive(userModel.isActive());
+        userListResponse.setNotLocked(userModel.isNotLocked());
+        return userListResponse;
     }
 }

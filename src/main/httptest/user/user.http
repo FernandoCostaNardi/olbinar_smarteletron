@@ -1,3 +1,8 @@
+GET http://localhost:8080/user/39
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzOCIsInJvbGVzIjoiUk9MRV9NQU5BR0VSIiwiaWF0IjoxNzIxMzk1Nzg3LCJleHAiOjE3MjE0MTAxODd9.sILqf58paEyngKomcUFba9tYfL3MPODGy8erPKO5lkhZ0lsOYPYJjA03_fi6batwE6fer7PPu4OX5FwhlawPLA
+
+###
 POST http://localhost:8080/user/save
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwicm9sZXMiOiJyZWFkIiwiaWF0IjoxNzIxMzI5MTc0LCJleHAiOjE3MjEzNDM1NzR9.BRkC5uX4lxmDRVFjHfsIQmSRV0k99SPRN-yi8HzKWXw18MsUrRH3giPVeb-mAO3hE_t3Dfoh-dx72p31sjOWCg
@@ -10,3 +15,9 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwicm9sZXMiOiJyZWFkIiwia
 }
 
 ###
+
+POST http://localhost:8080/user/list?page=0&size=10&name=Primeiro
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzOCIsInJvbGVzIjoiUk9MRV9NQU5BR0VSIiwiaWF0IjoxNzIxMzk1Nzg3LCJleHAiOjE3MjE0MTAxODd9.sILqf58paEyngKomcUFba9tYfL3MPODGy8erPKO5lkhZ0lsOYPYJjA03_fi6batwE6fer7PPu4OX5FwhlawPLA
+
+
