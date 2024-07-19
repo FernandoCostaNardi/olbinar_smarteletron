@@ -10,7 +10,7 @@ public interface UserService {
 
     UserResponse saveOrUpdateUser(UserRequest userRequest);
 
-    public Page<UserListResponse> listUsers(Pageable pageable, String name);
+    Page<UserListResponse> listUsers(Pageable pageable, String name);
 
     UserResponse getUserById(Long id);
 }
