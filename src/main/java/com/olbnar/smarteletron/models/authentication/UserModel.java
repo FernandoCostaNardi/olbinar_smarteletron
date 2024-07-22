@@ -55,6 +55,7 @@ public class UserModel {
     @JoinTable(name = "users_roles",
     joinColumns = @JoinColumn(name = "user_id"),
     inverseJoinColumns = @JoinColumn(name = "role_id"))
+
     @Builder.Default
     private  Set<RoleModel> roles = new HashSet<>();
 
@@ -66,4 +67,7 @@ public class UserModel {
     @Column(name = "isnotlocked", columnDefinition = "boolean default true")
     private boolean isNotLocked;
 
+    public void removeRole(RoleModel role) {
+        this.roles.remove(role);
+    }
 }

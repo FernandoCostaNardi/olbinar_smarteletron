@@ -3,6 +3,7 @@ package com.olbnar.smarteletron.models.authentication;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.olbnar.smarteletron.enums.RoleType;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -30,6 +31,9 @@ public class RoleModel implements GrantedAuthority {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, unique = true, length = 30)
     private RoleType roleName;
+
+    public RoleModel(String roleUser) {
+    }
 
     @Override
     @JsonIgnore
