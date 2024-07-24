@@ -1,6 +1,8 @@
 package com.olbnar.smarteletron.configs.exception;
 
 import com.olbnar.smarteletron.exception.role.RoleNotFoundException;
+import com.olbnar.smarteletron.exception.tradeoperation.OperationCodeException;
+import com.olbnar.smarteletron.exception.tradeoperation.OperationTypeException;
 import com.olbnar.smarteletron.exception.user.UserNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,11 +26,22 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(errorDetails, HttpStatus.FORBIDDEN);
     }
 
-    //criar para runtime exception
     @ExceptionHandler(RoleNotFoundException.class)
     public ResponseEntity<?> handleRuntimeException(RuntimeException ex, WebRequest request) {
         ErrorDetails errorDetails = new ErrorDetails(HttpStatus.NOT_FOUND, String.valueOf(HttpStatus.NOT_FOUND.value()) ,ex.getMessage(), request.getDescription(false));
         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(OperationCodeException.class)
+    public ResponseEntity<?> handleOperationCodeException(OperationCodeException ex, WebRequest request) {
+        ErrorDetails errorDetails = new ErrorDetails(HttpStatus.BAD_REQUEST, String.valueOf(HttpStatus.BAD_REQUEST.value()), ex.getMessage(), request.getDescription(false));
+        return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(OperationTypeException.class)
+    public ResponseEntity<?> handleOperationTypeException(OperationTypeException ex, WebRequest request) {
+        ErrorDetails errorDetails = new ErrorDetails(HttpStatus.BAD_REQUEST, String.valueOf(HttpStatus.BAD_REQUEST.value()), ex.getMessage(), request.getDescription(false));
+        return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
     }
 
     // Classe interna para detalhes do erro
