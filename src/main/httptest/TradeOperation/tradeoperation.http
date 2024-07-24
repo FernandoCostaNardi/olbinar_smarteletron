@@ -12,8 +12,13 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzOCIsInJvbGVzIjoiUk9MRV9TVE9SRSxST0xFX01BTkFHRVIsUk9MRV9BRE1JTiIsImlhdCI6MTcyMTg1MDg2OSwiZXhwIjoxNzIxODY1MjY5fQ.oz2xN_Hj_OsZZG1iqi-P3k9-_zCCrPPwLh-9armesxvH7LONL5ik1GbWUuLoQNYnwa-zXLOxQDGOlZhhH-yYqQ
 
 {
-  "operationType": "SALES",
-  "operationCode": "000071",
-  "operationDescription": "VENDA MERC. SUBS. TRIB.(CONTR.)"
+  "operationType": "SALE",
+  "operationCode": "012372",
+  "operationDescription": "bla"
 }
 
+###
+
+DELETE http://localhost:8080/trade-operation/16
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzOCIsInJvbGVzIjoiUk9MRV9TVE9SRSxST0xFX01BTkFHRVIsUk9MRV9BRE1JTiIsImlhdCI6MTcyMTg1MDg2OSwiZXhwIjoxNzIxODY1MjY5fQ.oz2xN_Hj_OsZZG1iqi-P3k9-_zCCrPPwLh-9armesxvH7LONL5ik1GbWUuLoQNYnwa-zXLOxQDGOlZhhH-yYqQ

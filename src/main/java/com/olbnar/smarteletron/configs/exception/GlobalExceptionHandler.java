@@ -3,6 +3,7 @@ package com.olbnar.smarteletron.configs.exception;
 import com.olbnar.smarteletron.exception.role.RoleNotFoundException;
 import com.olbnar.smarteletron.exception.tradeoperation.OperationCodeException;
 import com.olbnar.smarteletron.exception.tradeoperation.OperationTypeException;
+import com.olbnar.smarteletron.exception.tradeoperation.TradeOperationException;
 import com.olbnar.smarteletron.exception.user.UserNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,6 +41,12 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(OperationTypeException.class)
     public ResponseEntity<?> handleOperationTypeException(OperationTypeException ex, WebRequest request) {
+        ErrorDetails errorDetails = new ErrorDetails(HttpStatus.BAD_REQUEST, String.valueOf(HttpStatus.BAD_REQUEST.value()), ex.getMessage(), request.getDescription(false));
+        return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(TradeOperationException.class)
+    public ResponseEntity<?> handleTradeOperationException(TradeOperationException ex, WebRequest request) {
         ErrorDetails errorDetails = new ErrorDetails(HttpStatus.BAD_REQUEST, String.valueOf(HttpStatus.BAD_REQUEST.value()), ex.getMessage(), request.getDescription(false));
         return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
     }

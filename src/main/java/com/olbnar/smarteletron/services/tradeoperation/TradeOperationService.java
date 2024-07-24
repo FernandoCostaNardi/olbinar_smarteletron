@@ -9,4 +9,6 @@ public interface TradeOperationService {
     TradeOperationListResponse getTradeOperationsByType(TradeOperationListRequest tradeOperationRequest);
 
     TradeOperationResponse saveTradeOperation(TradeOperationRequest tradeOperationRequest);
+
+    void deleteTradeOperation(Long id);
 }

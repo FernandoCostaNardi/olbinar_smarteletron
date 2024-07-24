@@ -4,6 +4,7 @@ import com.olbnar.smarteletron.dtos.tradeoperation.TradeOperationListRequest;
 import com.olbnar.smarteletron.dtos.tradeoperation.TradeOperationListResponse;
 import com.olbnar.smarteletron.dtos.tradeoperation.TradeOperationRequest;
 import com.olbnar.smarteletron.dtos.tradeoperation.TradeOperationResponse;
+import com.olbnar.smarteletron.exception.tradeoperation.TradeOperationException;
 import com.olbnar.smarteletron.mapper.tradeoperation.TradeOperationMapper;
 import com.olbnar.smarteletron.models.tradeoperation.TradeOperation;
 import com.olbnar.smarteletron.repositories.tradeoperation.TradeOperationRepository;
@@ -43,4 +44,16 @@ public class TradeOperationServiceImpl implements TradeOperationService {
         //Retornar a operação salva
         return new TradeOperationResponse(tradeOperation);
     }
+
+    @Override
+    public void deleteTradeOperation(Long id) {
+        //valida se a operação existe pelo id
+        if (!tradeOperationRepository.existsById(id)) {
+            throw new TradeOperationException("Operação não encontrada: " + id);
+        }
+        //Deleta a operação
+        tradeOperationRepository.deleteById(id);
+    }
+
+
 }
