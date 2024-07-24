@@ -5,4 +5,6 @@ import com.olbnar.smarteletron.dtos.role.UserRolesResponse;
 
 public interface UserRoleService {
     UserRolesResponse saveOrUpdateUserRoles(UserRolesRequest userRolesRequest);
+
+    UserRolesResponse getUserRoles(Long id);
 }

@@ -1,7 +1,12 @@
+GET http://localhost:8080/user-roles/38
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzOCIsInJvbGVzIjoiUk9MRV9TVE9SRSxST0xFX1NFTExFUixST0xFX0FETUlOLFJPTEVfTUFOQUdFUiIsImlhdCI6MTcyMTc2NjQ0OCwiZXhwIjoxNzIxNzgwODQ4fQ.IxDeeesaXaAAdv-pyQtIcp6ywZapPhDK7eqyIOrbQUuq_1LTI9B1ecwgFuTeFMzSpnst4trrtz_nY5pC7JCYIQ
+
+
 ###
 POST http://localhost:8080/user-roles/save
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzOCIsInJvbGVzIjoiUk9MRV9NQU5BR0VSIiwiaWF0IjoxNzIxNjc4MjQzLCJleHAiOjE3MjE2OTI2NDN9.HQccL7jwv3bC1qVAh8dxVvg5_QQM_70U2Clu_Tr64vYwM5juLu_TN27hnjCHurxpsr2FYikK9tWquow2jU6_0g
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzOCIsInJvbGVzIjoiUk9MRV9TVE9SRSxST0xFX1NFTExFUixST0xFX0FETUlOLFJPTEVfTUFOQUdFUiIsImlhdCI6MTcyMTc2NjQ0OCwiZXhwIjoxNzIxNzgwODQ4fQ.IxDeeesaXaAAdv-pyQtIcp6ywZapPhDK7eqyIOrbQUuq_1LTI9B1ecwgFuTeFMzSpnst4trrtz_nY5pC7JCYIQ
 
 {
   "userId": 38,
@@ -10,10 +15,10 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzOCIsInJvbGVzIjoiUk9MRV9NQ
      "roleId": 1
     },
     {
-     "roleId": 2
+      "roleId": 2
     },
     {
-     "roleId": 3
+      "roleId": 3
     }
   ]
 
