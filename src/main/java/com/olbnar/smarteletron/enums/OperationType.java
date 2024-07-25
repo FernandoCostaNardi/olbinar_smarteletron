@@ -10,7 +10,4 @@ public enum OperationType {
         this.operationType = operationType;
     }
 
-    public String getOperationType() {
-        return operationType;
-    }
 }

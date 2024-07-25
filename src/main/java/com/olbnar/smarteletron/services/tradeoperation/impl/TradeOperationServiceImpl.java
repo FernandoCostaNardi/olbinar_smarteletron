@@ -39,7 +39,7 @@ public class TradeOperationServiceImpl implements TradeOperationService {
     @Override
     public TradeOperationResponse saveTradeOperation(TradeOperationRequest tradeOperationRequest) {
         //Valida se o tipo de operação é válido
-        tradeOperationValidation.isOperationTypeValid(tradeOperationRequest.getOperationType().toString());
+        tradeOperationValidation.isOperationTypeValid(tradeOperationRequest.getOperationType());
         //Validar se o operationCode já existe
         tradeOperationValidation.validateOperationCodeUniqueness(tradeOperationRequest.getOperationCode());
         //convert tradeOperationRequest to TradeOperation

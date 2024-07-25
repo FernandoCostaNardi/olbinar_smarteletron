@@ -32,6 +32,6 @@ public class TradeOperation {
     @Column(name = "operation_code", nullable = false, unique = true, length = 20)
     private String operationCode;
 
-    @Column(name = "operation_description", nullable = false, unique = true, length = 255)
+    @Column(name = "operation_description", nullable = false, unique = true)
     private String operationDescription;
 }

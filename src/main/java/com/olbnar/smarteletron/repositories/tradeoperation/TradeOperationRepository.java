@@ -6,8 +6,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
-
 public interface TradeOperationRepository extends JpaRepository<TradeOperation, Long> {
 
     Page<TradeOperation> findByOperationType(OperationType operationType, Pageable pageable);

@@ -20,11 +20,6 @@ public class TradeOperationMapper {
         return tradeOperation;
     }
 
-    public TradeOperationResponse entityToResponse(TradeOperation tradeOperation) {
-        return new TradeOperationResponse(tradeOperation);
-    }
-
-
     public TradeOperationListResponse entityToListResponse(List<TradeOperation> tradeOperations) {
         return new TradeOperationListResponse(tradeOperations);
     }
