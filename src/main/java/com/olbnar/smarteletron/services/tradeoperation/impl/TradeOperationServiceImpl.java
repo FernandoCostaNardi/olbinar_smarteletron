@@ -10,7 +10,11 @@ import com.olbnar.smarteletron.models.tradeoperation.TradeOperation;
 import com.olbnar.smarteletron.repositories.tradeoperation.TradeOperationRepository;
 import com.olbnar.smarteletron.services.tradeoperation.TradeOperationService;
 import com.olbnar.smarteletron.validation.tradeoperation.TradeOperationValidation;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class TradeOperationServiceImpl implements TradeOperationService {
@@ -26,9 +30,10 @@ public class TradeOperationServiceImpl implements TradeOperationService {
     }
 
     @Override
-    public TradeOperationListResponse getTradeOperationsByType(TradeOperationListRequest tradeOperationRequest) {
-        tradeOperationValidation.isOperationTypeValid(tradeOperationRequest.getOperationType().toString());
-        return new TradeOperationListResponse(tradeOperationRepository.findByOperationType(tradeOperationRequest.getOperationType()));
+    public Page<TradeOperationListResponse> getTradeOperationsByType(TradeOperationListRequest tradeOperationRequest, PageRequest pageRequest) {
+        tradeOperationValidation .isOperationTypeValid(tradeOperationRequest.getOperationType().toString());
+        Page<TradeOperation> tradeOperationsPage = tradeOperationRepository.findByOperationType(tradeOperationRequest.getOperationType(), pageRequest);
+        return tradeOperationsPage.map(tradeOperation -> tradeOperationMapper.entityToListResponse(List.of(tradeOperation)));
     }
 
     @Override

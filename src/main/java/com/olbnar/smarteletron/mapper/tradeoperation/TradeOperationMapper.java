@@ -1,10 +1,13 @@
 package com.olbnar.smarteletron.mapper.tradeoperation;
 
+import com.olbnar.smarteletron.dtos.tradeoperation.TradeOperationListResponse;
 import com.olbnar.smarteletron.dtos.tradeoperation.TradeOperationRequest;
 import com.olbnar.smarteletron.dtos.tradeoperation.TradeOperationResponse;
 import com.olbnar.smarteletron.enums.OperationType;
 import com.olbnar.smarteletron.models.tradeoperation.TradeOperation;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class TradeOperationMapper {
@@ -19,5 +22,10 @@ public class TradeOperationMapper {
 
     public TradeOperationResponse entityToResponse(TradeOperation tradeOperation) {
         return new TradeOperationResponse(tradeOperation);
+    }
+
+
+    public TradeOperationListResponse entityToListResponse(List<TradeOperation> tradeOperations) {
+        return new TradeOperationListResponse(tradeOperations);
     }
 }
